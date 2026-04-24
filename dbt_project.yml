@@ -2,7 +2,6 @@ name: 'jaffle_shop'
 version: '1.0.0'
 config-version: 2
 
-# Questo deve corrispondere al profilo creato durante il setup
 profile: 'default' 
 
 model-paths: ["models"]
@@ -16,9 +15,7 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
-# Qui decidiamo come salvare i dati su BigQuery
+# Configurazioni dei modelli
 models:
   jaffle_shop:
-    +materialized: table  # Tutto quello che creiamo sarà una TABELLA
-    example:
-      +materialized: view   # Le cose nella cartella 'example' saranno VISTE
+    +materialized: table # Ora tutto il progetto jaffle_shop creerà tabelle
