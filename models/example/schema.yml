@@ -1,5 +1,5 @@
 version: 2
 
 models:
-    - name: prima
+    - name: test
       description: "A starter dbt model"
