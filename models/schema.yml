@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: customers
+    description: "Tabella finale: un record per ogni cliente con statistiche sugli ordini"
+    columns:
+      - name: customer_id
+        description: "Chiave primaria del cliente"
+        data_tests:
+          - unique
+          - not_null
+      - name: first_order_date
+        description: "Data del primo ordine effettuato. NULL se il cliente non ha mai ordinato."
+
+  - name: stg_customers
+    description: "Modello di staging: pulizia dati grezzi dei clienti"
+    columns:
+      - name: customer_id
+        description: "Chiave primaria (ID originale del database)"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: "Modello di staging: pulizia dati grezzi degli ordini"
+    columns:
+      - name: order_id
+        description: "Chiave primaria dell'ordine"
+        data_tests:
+          - unique
+          - not_null
+      - name: status
+        description: "Stato dell'ordine (es. completato, spedito, ecc.)"
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+      - name: customer_id
+        description: "Chiave esterna verso stg_customers"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
