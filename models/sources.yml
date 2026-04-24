@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+    - name: jaffle_shop
+      description: Una replica del database Postgres della nostra app
+      database: dbt-tutorial # Il progetto Google Cloud
+      schema: jaffle_shop   # Il dataset BigQuery
+      tables:
+          - name: customers
+            description: Un record per ogni cliente.
+          - name: orders
+            description: Un record per ogni ordine (inclusi quelli cancellati).
