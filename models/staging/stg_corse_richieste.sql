@@ -1,0 +1,1 @@
+select id_corsa, creato_il as richiesta_at from {{ source('raw_rides', 'corse_richieste') }}

@@ -2,11 +2,11 @@ with base_corse as (
     select * from {{ ref('stg_corse') }}
 ),
 
-richieste as ( select id_corsa, creato_il as richiesta_at from {{ source('raw_rides', 'corse_richieste') }} ),
-accettate as ( select id_corsa, creato_il as accettata_at from {{ source('raw_rides', 'corse_accettate') }} ),
-iniziate as ( select id_corsa, creato_il as iniziata_at from {{ source('raw_rides', 'corse_iniziate') }} ),
-completate as ( select id_corsa, creato_il as completata_at from {{ source('raw_rides', 'corse_completate') }} ),
-cancellate as ( select id_corsa, creato_il as cancellata_at, motivo from {{ source('raw_rides', 'corse_cancellate') }} )
+richieste as ( select * from {{ ref('stg_corse_richieste') }} ),
+accettate as ( select * from {{ ref('stg_corse_accettate') }} ),
+iniziate as ( select * from {{ ref('stg_corse_iniziate') }} ),
+completate as ( select * from {{ ref('stg_corse_completate') }} ),
+cancellate as ( select * from {{ ref('stg_corse_cancellate') }} )
 
 select
     b.corsa_id,
