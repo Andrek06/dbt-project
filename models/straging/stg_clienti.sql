@@ -1,0 +1,1 @@
+select id as cliente_id, nome, telefono, email, indirizzo from {{ source('raw_rides', 'clienti') }}

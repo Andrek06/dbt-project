@@ -1,0 +1,1 @@
+select id as rider_id, nome, telefono from {{ source('raw_rides', 'riders') }}

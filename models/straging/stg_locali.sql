@@ -1,0 +1,1 @@
+select id as locale_id, nome, indirizzo from {{ source('raw_rides', 'locali') }}

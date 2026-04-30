@@ -1,12 +1,16 @@
 version: 2
 
 sources:
-    - name: jaffle_shop
-      description: Una replica del database Postgres della nostra app
-      database: dbt-tutorial # Il progetto Google Cloud
-      schema: jaffle_shop   # Il dataset BigQuery
-      tables:
-          - name: customers
-            description: Un record per ogni cliente.
-          - name: orders
-            description: Un record per ogni ordine (inclusi quelli cancellati).
+  - name: raw_rides
+    database: "eco-rrune-459817-m9"
+    schema: raw_rides
+    tables:
+      - name: corse
+      - name: corse_richieste
+      - name: corse_accettate
+      - name: corse_iniziate
+      - name: corse_completate
+      - name: corse_cancellate
+      - name: riders
+      - name: clienti
+      - name: locali
