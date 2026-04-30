@@ -1,1 +1,5 @@
-select id as rider_id, nome, telefono from {{ source('raw_rides', 'riders') }}
+select 
+    id as id_rider,
+    nome, 
+    telefono 
+from {{ source('raw_rides', 'riders') }}
