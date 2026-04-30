@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw_rides
-    database: "eco-rune-459817-m9"
+    database: eco-rune-459817-m9
     schema: raw_rides
     tables:
       - name: corse
