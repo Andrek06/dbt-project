@@ -12,14 +12,16 @@ models:
         data_tests:
           - not_null
           - relationships:
-              to: ref('dim_riders')
-              field: id_rider
+              arguments: # <--- Questa è la cartella che mancava
+                to: ref('dim_riders')
+                field: id_rider
       - name: id_cliente
         data_tests:
           - not_null
           - relationships:
-              to: ref('dim_clienti')
-              field: id_cliente
+              arguments: # <--- Questa è la cartella che mancava
+                to: ref('dim_clienti')
+                field: id_cliente
 
   - name: dim_riders
     columns:
