@@ -15,7 +15,6 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
-# Configurazioni dei modelli
 models:
   jaffle_shop:
-    +materialized: table # Ora tutto il progetto jaffle_shop creerà tabelle
+    +materialized: view
