@@ -1,0 +1,1 @@
+select id_ordine, data_transazione, importo from {{ source('raw_pay', 'transazioni') }}

@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw_pay
+    database: "eco-rune-459817-m9"
+    schema: "raw_pay"
+    tables:
+      - name: utenti
+      - name: piani
+      - name: metodi
+      - name: coupon
+      - name: ordini
+      - name: abbonamenti
+      - name: transazioni
+      - name: rinnovi

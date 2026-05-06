@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: fct_pagamenti
+    columns:
+      - name: id_ordine
+        tests:
+          - unique
+          - not_null
+      - name: id_utente
+        tests:
+          - not_null
+          
+  - name: mart_pagamenti_flat
+    columns:
+      - name: id_ordine
+        tests:
+          - unique
+          - not_null

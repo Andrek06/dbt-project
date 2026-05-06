@@ -1,0 +1,1 @@
+select id as id_piano, nome as piano_nome, prezzo, durata from {{ source('raw_pay', 'piani') }}

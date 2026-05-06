@@ -1,0 +1,1 @@
+select id as id_metodo, nome as metodo_nome from {{ source('raw_pay', 'metodi') }}
