@@ -1,0 +1,1 @@
+select id_ordine, attivo as is_rinnovo_attivo from {{ source('raw_pay', 'rinnovi') }}

@@ -1,16 +1,15 @@
 version: 2
 
 sources:
-  - name: raw_rides
-    database: eco-rune-459817-m9
-    schema: raw_rides
+  - name: raw_pay
+    database: "eco-rune-459817-m9"
+    schema: "raw_pay"
     tables:
-      - name: corse
-      - name: corse_richieste
-      - name: corse_accettate
-      - name: corse_iniziate
-      - name: corse_completate
-      - name: corse_cancellate
-      - name: riders
-      - name: clienti
-      - name: locali
+      - name: utenti
+      - name: piani
+      - name: metodi
+      - name: coupon
+      - name: ordini
+      - name: abbonamenti
+      - name: transazioni
+      - name: rinnovi

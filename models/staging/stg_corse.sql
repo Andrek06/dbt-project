@@ -1,1 +1,0 @@
-select id as corsa_id, id_rider, id_cliente, id_locale from {{ source('raw_rides', 'corse') }}

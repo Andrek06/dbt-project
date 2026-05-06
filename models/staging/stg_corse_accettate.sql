@@ -1,1 +1,0 @@
-select id_corsa, creato_il as accettata_at from {{ source('raw_rides', 'corse_accettate') }}

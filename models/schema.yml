@@ -1,31 +1,19 @@
 version: 2
 
 models:
-  - name: fct_corse
-    description: "Tabella dei fatti consolidata per Deliveroo"
+  - name: fct_pagamenti
     columns:
-      - name: corsa_id
-        data_tests:
+      - name: id_ordine
+        tests:
           - unique
           - not_null
-      - name: id_rider
-        data_tests:
+      - name: id_utente
+        tests:
           - not_null
-          - relationships:
-              arguments: # <--- Questa è la cartella che mancava
-                to: ref('dim_riders')
-                field: id_rider
-      - name: id_cliente
-        data_tests:
-          - not_null
-          - relationships:
-              arguments: # <--- Questa è la cartella che mancava
-                to: ref('dim_clienti')
-                field: id_cliente
-
-  - name: dim_riders
+          
+  - name: mart_pagamenti_flat
     columns:
-      - name: id_rider
-        data_tests:
+      - name: id_ordine
+        tests:
           - unique
           - not_null

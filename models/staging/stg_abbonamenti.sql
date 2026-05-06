@@ -1,0 +1,1 @@
+select id_ordine, iniziato_il, finito_il from {{ source('raw_pay', 'abbonamenti') }}

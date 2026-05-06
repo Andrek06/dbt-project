@@ -1,1 +1,0 @@
-select id_corsa, creato_il as cancellata_at, motivo from {{ source('raw_rides', 'corse_cancellate') }}
